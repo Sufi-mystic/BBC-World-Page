@@ -1,0 +1,402 @@
+<!doctype html>
+<html>
+	<head>
+	
+		<title>World - BBC News</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<style type="text/css">
+		
+			body{
+				margin: 0;
+				padding: 0;
+				font-family:  ReithSans, Arial, Helvetica, freesans, sans-serif;
+			}
+		
+			#top-bar{
+				width: 100vw;
+				margin: 0 auto;
+				height: 68px;
+				font-weight: bold;
+				
+			}
+			
+			#bbc-logo{
+				width: 100px;
+				height: 60px;
+				float: left;
+				margin: 4px 0 4px 35px;
+			}
+			
+			#signin-div{
+				float:left;
+				margin: 10px 25px 4px 30px;
+			}
+			
+			#signin-div a{
+				text-decoration: none;
+				color: black;
+			}
+			
+			#signin-logo{
+				width: 65px;
+				height: 35px;
+				margin: 10px 0px 20px -25px;
+				float: left;
+			}
+			
+			#signin-text{
+				font-weight: bold;
+				font-size: 90%;
+				position:relative;
+				top: 15px;
+				left: -15px;
+				padding-right: 50px;
+			}
+			
+			.topbar-section{
+				float:left;
+				margin: 20px 0px;
+				border-left: 1px #cccccc solid;
+				height: 25px;
+			}
+			
+			
+			#menu-bar li{
+				float: left;
+				list-style: none;
+				margin-bottom: 10px;
+				margin-top: 5px;
+				
+			}
+			
+			#menu-bar a{
+				text-decoration: none;
+				color: black;
+				font-size: 80%;
+				padding: 0px 25px;
+			}
+			
+			#menu-bar a:hover{
+			
+				border-bottom: 1px solid black;
+			
+			}
+			
+			.dot{
+				width: 4px;
+				height: 4px;
+				background-color: black;
+				float:left;
+				margin:2px;
+				position: relative;
+				top: 4px;
+			}
+			
+			#search-box{
+				border: none;
+				background-color:#ded3d3;
+				font-weight: bold;
+				height: 40px;
+				width: 200px;
+				margin-top: 10px;
+				margin-left: -20px;
+			}
+			
+			#news-bar{
+				width: 100vw;
+				height: 95px;
+				background-color: #B80000;
+				margin: -35px 0 0 0;
+				color: white;
+			}
+			
+			#newsbar-header span{
+				position: relative;
+				right: 315px;
+				margin: 7px 0 4px 20px;
+				font-size: 43px;
+				float: left;
+			}
+			
+			.clear-section{
+				clear: both;
+			}
+			
+			#newsmenu-bar{
+				position: relative;
+				right: -35px;
+				top: -6px;
+				
+			}
+			
+			#newsmenu-bar li{
+				float: left;
+				list-style: none;
+				position:relative;
+				top: -5px;
+				bottom: -2px;
+				padding-right: 5px;
+			}
+			
+			#newsmenu-bar a{
+				font-size: 14px;
+				text-decoration: none;
+				color: white;
+				font-weight: normal;
+				margin-right: 2px;
+			}
+			
+			.menubar-section{
+				padding-right: 8px;
+				padding-left: 8px;
+				border-left: 1px #a65b67 solid;
+				height: 25px;
+			}
+			
+			#newsmenu-bar a:hover{
+				text-decoration: underline;
+			}
+			
+			#smallmenu-bar{
+				width:100%;
+				height: 50px;				
+			}
+			
+			#small-menu li{
+				float:left;
+				list-style: none;
+				position: relative;
+				right: -35px;
+				top: 10px;
+				padding-right: 5px;
+			}
+			
+			#small-menu a{
+				font-size: 14px;
+				text-decoration: none;
+				color: black;
+				margin-right: 2px;
+			}
+			
+
+			
+			.small-menubar-section{
+				border-left: 1px #f2e1e4 solid;
+				padding-left:9px;
+				padding-right: 9px;
+			}
+			
+			#news-container{
+				height: 100%;
+				display: grid;
+				margin:0 20px;
+				margin-left: 34px;
+				grid-gap: 5px;
+				
+				grid-template:
+					"header header header" auto
+					"article article ad-side" 180%
+					"footer footer footer" 70% /
+					2fr 1fr 0.8fr;
+			}
+			
+			#ad-header{
+				background-color: #EEEEEE;
+				margin-top: -10px;
+				height: 100px;
+				grid-area: header;
+			}
+			
+			.ad-head{
+				color: #505050;
+				font-size: 15px;
+				position: absolute;
+				right: 380px;
+			}
+			
+			#article{
+				background-color: white;
+				grid-area: article;
+				padding: 2px 5px;
+			}
+			
+			#article-image{
+				
+				float:left;
+				
+			}
+			
+			#article-image img{
+				
+				width:650px;
+				height:400px;
+			}
+			
+			#article-content{
+				
+				width: 300px;
+				height: 350px;
+				float: left;
+				margin: -3px 5px 0px 12px;
+				line-height: 1;			
+				align-items: center;
+				overflow-wrap: break-word;
+			
+			}
+			
+			#article-content h1 a{
+			
+				color: #716C65;
+				text-decoration: none;
+				font-size: 90%;
+			
+			}
+			
+			#article-content h1 a:hover{
+			
+				color:#b30b25;
+				text-decoration: underline;
+			
+			}
+			
+
+			#article-content p{
+			
+				color: #716C65;
+				font-size: 45%;
+				font-weight: normal;
+			
+			}
+			
+			#article-list li{
+				line-height: 0.8;
+				
+			}
+			
+			#article-list li a{
+				font-size: 50%;
+				color: black;
+				font-weight: bold;
+				
+				
+			}
+			
+			#ad-side{
+				background-color: #EEEEEE;
+				grid-area: ad-side;
+			}
+			
+			#footer-article{
+				background-color: #f2e1c2;
+				grid-area: footer;
+			}
+			
+			
+		</style>
+	
+	</head>
+	
+	<body>
+	
+		<div id="top-bar">
+			<img id="bbc-logo" src="images/bbc-logo.png">
+			<div id="signin-div" >
+			<a href="#"><img id="signin-logo" src="images/sign-in.png"><span id="signin-text">Sign in</span></a>
+			</div>
+			
+			<div id="menu-bar" class="topbar-section">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">Sport</a></li>
+				<li><a href="#">Reel</a></li>
+				<li><a href="#">Worklife</a></li>
+				<li><a href="#">Travel</a></li>
+				<li><a href="#">Future</a></li>
+				<li><a href="#">Culture</a></li>
+				<li><a href="#"><div class="dot"></div><div class="dot"></div><div class="dot"></div></a></li>
+			</div>
+			
+			<div>
+				<input type="search" placeholder=" Search BBC" id="search-box">
+			</div>
+		</div>
+		
+		<div class="clear-section"></div>
+		
+		<div id="news-bar">
+			<h1 id="newsbar-header"><span>NEWS</span><h1>
+			<div class="clear-section"></div>
+			<div id="newsmenu-bar" >
+				<li><a href="#" >Home</a></li>
+				<li><a href="#" class="menubar-section">War in Ukraine</a></li>
+				<li><a href="#" class="menubar-section">Coronavirus</a></li>
+				<li><a href="#"class="menubar-section">Climate</a></li>
+				<li><a href="#"class="menubar-section">Video</a></li>
+				<li><a href="#"class="menubar-section">World</a></li>
+				<li><a href="#"class="menubar-section">Asia</a></li>
+				<li><a href="#" class="menubar-section">UK</a></li>
+				<li><a href="#" class="menubar-section">Business</a></li>
+				<li><a href="#" class="menubar-section">Tech</a></li>
+				<li><a href="#" class="menubar-section">Science</a></li>
+				<li><a href="#" class="menubar-section">Entertainment & Arts</a></li>
+				<li><a href="#" class="menubar-section">Health</a></li>
+				<li><a href="#" class="menubar-section">World News TV</a></li>
+				<li><a href="#" class="menubar-section">More</a></li>
+			</div>
+		</div>
+		
+		<div class="clear-section"></div>
+		
+		<div id="smallmenu-bar">
+			<div id="small-menu">
+				<li><a href="#" >World</a></li>
+				<li><a href="#" class="small-menubar-section">Africa</a></li>
+				<li><a href="#" class="small-menubar-section">Australia</a></li>
+				<li><a href="#"class="small-menubar-section">Europe</a></li>
+				<li><a href="#"class="small-menubar-section">Latin America</a></li>
+				<li><a href="#"class="small-menubar-section">Middle East</a></li>
+				<li><a href="#"class="small-menubar-section">US & Canada</a></li>
+			</div>
+		</div>
+		
+		<div class="clear-section"></div>
+		
+		<div id="news-container">
+			
+			<div id="ad-header"> 
+				<div class="ad-image">
+				<span class="ad-head">ADVERTISEMENT</span>
+				<center><img src="images/ad_one.png"style="width: 600px; height: 75px; margin-top: 20px; border: 1px solid black;"></center>
+				</div>
+
+			</div>
+			<div id="article"> 
+				<div id="article-image">
+					<img src="images/article_img.png">
+				</div>
+				<div id="article-content">
+					<h1><a href="#" >India aims to be first to land near Moon's south pole</a><h1>
+					<p>If successful, it could become the first country to land near the Moon's south pole, hunting for water-based ice.</p>
+					<p><i style="font-size:15px" class="fa">&#xf017;</i> 1 hr | India</p>
+					<ul id="article-list">
+						<li><a href="#">India's latest Moon mission sends first photos</a></li>
+						<li><a href="#">Historic India Moon mission lifts off successfully</a></li>
+						<li><a href="#">The women scientists who took India into space</a></li>
+					</ul>
+				</div>
+			
+			 
+			
+			</div>
+			<div id="ad-side">
+				<span class="ad-head"style="right: 50px; ">ADVERTISEMENT</span><br><br>
+				<center><img src="images/ad_two.png" style="width: 100%; height:300px; border: 1px solid black;"></center>
+			
+			</div>
+			<div id="footer-article"> Footer articles</div>
+		
+		</div>
+	
+	</body>
+</html>
